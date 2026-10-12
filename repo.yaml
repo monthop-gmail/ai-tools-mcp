@@ -1,0 +1,37 @@
+# repo.yaml — ai-tools-mcp · schema จากรีโปมาตรฐานของ org (🔒 private)
+schema_version: "0.2"
+name: monthop-gmail/ai-tools-mcp
+owner:
+  team: AI Tools — contract plane
+  humans: [monthop-gmail]
+  team_id: monthop-gmail/ai-tools-mcp
+workstream: TBD                 # ยังไม่ถูกลงทะเบียนใน index กลาง — gap ที่รู้ตัว ไม่ใช่การยังไม่ตรวจ
+status: active
+purpose: "Contract plane: identity/principal model, policy semantics, operation/resource/capability namespace, audit + approval contracts, ToolId collision rules, conformance criteria. Specs and ADRs only, no runtime."
+default_branch: main
+version_source: VERSION         # release version ของเอกสารชุดนี้ · ไม่ใช่เวอร์ชันของสัญญาแต่ละใบ (base §4)
+stack: [Markdown, ADR, JSON Schema]
+depends_on:
+  - repo: monthop-gmail/agent-platform
+    why: "คำศัพท์กลาง capability/v1 · policy/v1 · event/v1 · approval/v1 · artifact/v1 ที่สัญญาที่นี่ต้องไม่ขัด"
+  - repo: monthop-gmail/ai-collaboration-mcp
+    why: "รูปของ task/handoff/decision ที่สัญญา attribution และ audit อ้างถึง"
+supersedes: []
+superseded_by: null
+canonical_for:
+  - identity / principal / actor model และการผูกชั้น credential กับชื่อที่ผู้เรียกประกาศ
+  - policy semantics — จุดตัดสิน, default deny, operation taxonomy, เงื่อนไขของ wildcard
+  - namespace และรูปแบบค่าของ operation / resource / capability
+  - audit contract — ช่องบังคับ, ช่องที่ห้ามเก็บ, จุดยืนของผู้บันทึก
+  - approval contract (ยังไม่มีเนื้อ — เป็นหนี้ที่ประกาศไว้)
+  - ToolId / collision rules เมื่อรวม tool จากหลายต้นทาง
+  - conformance criteria สำหรับ MCP hub และ gateway
+knowledge_files:
+  agents_md: AGENTS.md
+  claude_md: null
+  adr_dir: docs/decisions/
+  changelog: CHANGES.md
+  openapi: null
+last_reviewed: 2026-10-12
+review_interval_days: 30
+ws001: [dis-fa078bf8, dis-3b5cb137, dis-514ae7a7, dis-a84b7a8e, dec-f7cbd10c, dec-4e9b685e]
