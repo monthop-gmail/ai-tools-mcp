@@ -19,7 +19,7 @@
 - **policy semantics** — จุดตัดสิน · default deny · operation taxonomy · เงื่อนไขของ wildcard
 - **operation / resource / capability namespace** — รูปแบบค่า การซอยค่า และความสัมพันธ์กับคำศัพท์กลางของ `agent-platform`
 - **audit contract** — ช่องที่ต้องมี · ช่องที่ห้ามเก็บ · ใครเป็นผู้บันทึกและจากจุดยืนไหน
-- **approval contract** — ยังไม่มี ดู [ADR-0009](docs/decisions/) เมื่อเขียนแล้ว · วันนี้เป็นหนี้ที่ค้างอยู่และประกาศไว้ตรง ๆ
+- **approval contract** — [ADR-0009](docs/decisions/0009-approval-contract-for-tool-execution.md) + [เกณฑ์ 18 ทาง](conformance/approval/CRITERIA.md) · ยังเป็น `Proposed` และข้อ 1 รอ field ระดับ platform จาก `agent-platform`
 - **ToolId / collision rules** — การแปลงชื่อเมื่อรวม tool จากหลายต้นทาง
 - **conformance criteria** — เกณฑ์ที่ hub หรือ gateway ตัวใดก็ตามถูกวัดด้วย พร้อมกติกาว่าชุดวัดต้องพิสูจน์อะไรกับตัวเอง
 
@@ -64,10 +64,11 @@ Superseded มีใบใหม่แทน — ใบเก่าไม่ถ�
 | [0006](docs/decisions/0006-one-endpoint-per-connector-and-toolid-collision.md) | หนึ่ง endpoint ต่อหนึ่ง connector · ToolId ชนกันให้ reject | Proposed |
 | [0007](docs/decisions/0007-conformance-criteria-need-mutants.md) | ทุกทางที่ fail ได้ ต้องมี mutant พิสูจน์ | Proposed |
 | [0008](docs/decisions/0008-capability-value-format.md) | รูปแบบค่าของ capability และความสัมพันธ์กับคำศัพท์กลาง | Proposed |
+| [0009](docs/decisions/0009-approval-contract-for-tool-execution.md) | **approval contract** — ใบผูกกับอะไร · ใครเป็นผู้มีอำนาจได้ | Proposed |
 
 ## หนี้ที่ค้างและประกาศไว้
 
-1. **approval contract** — ยังไม่มี · เส้น write/privileged ของ runtime รออันนี้อยู่
+1. **approval contract** — ร่างแล้ว (ADR-0009) · ข้อ 1 ต้องให้ `agent-platform` เพิ่ม field ระดับ platform สำหรับ payload digest ก่อน · เส้น write/privileged ยังไม่เปิด
 2. **ชุด conformance ของ upstream adapter** — มีอยู่แล้วที่รีโป runtime 🔒 และทีมนั้นเสนอเองว่าควรย้ายมาที่นี่ · ยังไม่รับโอน
 3. **แกน target ใน policy model** — `action.resource` ของ `agent-platform` มีอยู่แล้วแต่ยังไม่มีกฎของค่า · ดู ADR-0005
 

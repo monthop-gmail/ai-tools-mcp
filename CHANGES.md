@@ -9,7 +9,8 @@
 **เพิ่ม**
 
 - `README.md` · `AGENTS.md` · `repo.yaml` (schema 0.2) · `VERSION` · `CHANGES.md`
-- `docs/decisions/0001`–`0008` — ADR ชุดแรก
+- `docs/decisions/0001`–`0009` — ADR ชุดแรก
+- `conformance/approval/CRITERIA.md` — เกณฑ์ที่วัดได้ของ ADR-0009 · 18 ทางที่ `fail` ได้
 
 **เหตุ**
 
@@ -23,4 +24,5 @@ ADR เกือบทั้งหมดเป็น**การย้ายท�
 
 **ยังไม่ได้ทำ**
 
-approval contract · การรับโอนชุด conformance ของ upstream adapter · กฎของค่า `action.resource`
+ชุดรันของเกณฑ์ approval (เอกสารนี้เป็นเกณฑ์ ไม่ใช่ชุดทดสอบ) · การรับโอนชุด conformance ของ upstream adapter ·
+กฎของค่า `action.resource` · field ระดับ platform สำหรับ payload digest ที่ต้องขอจาก `agent-platform`
